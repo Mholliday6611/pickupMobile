@@ -1,0 +1,38 @@
+	<h1>REGISTER </h1>
+	<div method=post class="list">
+		<form ng-submit="register()" >
+		  <label class="item item-input">
+		    <span class="input-label">Username</span>
+		    <input type="text" ng-model="newUser.username">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">Email</span>
+		    <input type="email" ng-model="newUser.email">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">Password</span>
+		    <input type="password" ng-model="newUser.password">
+		  </label>
+		  <button type="submit" class="button button-royal">
+	 		 Register
+			</button>
+		</form>
+	</div>
+	{{msg}}
+	<h1>LOGIN</h1>	
+	<div method=post class="list">
+		<form id="login" method="post" ng-submit="login()">
+			<label class="item item-input">
+		    <span class="input-label">Username</span>
+		    <input type="text"  ng-model="log.username">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label">Password</span>
+		    <input type="password" ng-model="log.password">
+		  </label>
+		  <button type="submit" class="button button-royal">
+	 		 Login
+			</button>
+		</form>
+	</div>
+	{{msg2}}
