@@ -1,9 +1,15 @@
-angular.module("pickupApp.factory", ['ngCordova.plugins.nativeStorage'])
-.factory("creds", function($cordovaNativeStorage){
-	var creds = {};
-	$cordovaNativeStorage.getItem('session').then(function(value){
-		creds.username = value.user;
-		creds.token = value.token
-	})
+angular.module("pickupApp.factory", ["ngStorage"])
+.factory("creds", function($localStorage){
+	var creds = function(){
+		if($localStorage.session){
+			return {
+				username: $localStorage.session.user,
+				token: $localStorage.session.token
+			}
+		}else{
+			return null
+		}
+		
+	};
 	return creds
 })
